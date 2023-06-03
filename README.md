@@ -1,4 +1,4 @@
-#DocConnect360 Online Medical Portal Website
+# DocConnect360 Online Medical Portal Website
 
 This is the repository for an online medical portal website, created using HTML, JavaScript, PHP, and CSS. The project was developed as a part of the IWT (Internet and Web Technologies) module along with ISDM (Information Systems Data and Modeling) and SPM (Software Process Modeling) modules.
 
