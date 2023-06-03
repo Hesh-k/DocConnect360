@@ -1,71 +1,109 @@
-// Selecting form and input elements
-const form = document.querySelector("form");
-const passwordInput = document.getElementById("password");
-const passToggleBtn = document.getElementById("pass-toggle-btn");
 
-// Function to display error messages
-const showError = (field, errorText) => {
-    field.classList.add("error");
-    const errorElement = document.createElement("small");
-    errorElement.classList.add("error-text");
-    errorElement.innerText = errorText;
-    field.closest(".form-group").appendChild(errorElement);
+var d_array = [
+    { month: 'January', days: 31 },
+    { month: 'Febr0ary', days: 29 },
+    { month: 'March', days: 31 },
+    { month: 'April', days: 30 },
+    { month: 'May', days: 31 },
+    { month: 'June', days: 30 },
+    { month: 'July', days: 31 },
+    { month: 'August', days: 31 },
+    { month: 'Septhember', days: 30 },
+    { month: 'October', days: 31 },
+    { month: 'November', days: 30 },
+    { month: 'December', days: 31 },
+];
+
+function validateForm() {
+    var nicNumber = document.getElementById("nic").value;
+    var birthday = document.getElementById("birthday").value;
+    var gender = document.querySelector('input[name="gender"]:checked').value;
+
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!validateNIC(nicNumber, birthday, gender)) {
+        document.getElementById("validationError").innerHTML = "NIC number does not match with the provided birthday and gender.";
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+    return true;
 }
 
-// Function to handle form submission
-const handleFormData = (e) => {
-    e.preventDefault();
+function validateNIC(nicNumber, birthday, gender) {
+    var extractedData = extractData(nicNumber);
+    var days = extractedData.dayList;
+    var foundData = findDayAndGender(days, d_array);
 
-    // Retrieving input elements
-    const fullnameInput = document.getElementById("fullname");
-    const emailInput = document.getElementById("email");
-    const dateInput = document.getElementById("date");
-    const genderInput = document.getElementById("gender");
+    var month = foundData.month;
+    var year = extractedData.year;
+    var day = foundData.day;
+    var nicGender = foundData.gender;
 
-    // Getting trimmed values from input fields
-    const fullname = fullnameInput.value.trim();
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-    const date = dateInput.value;
-    const gender = genderInput.value;
+    var bday = day + '-' + month + '-' + year;
+    var formattedBirthday = getFormattedDate(new Date(bday.replace(/(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")));
 
-    // Regular expression pattern for email validation
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-    // Clearing previous error messages
-    document.querySelectorAll(".form-group .error").forEach(field => field.classList.remove("error"));
-    document.querySelectorAll(".error-text").forEach(errorText => errorText.remove());
-
-    // Performing validation checks
-    if (fullname === "") {
-        showError(fullnameInput, "Enter your full name");
-    }
-    if (!emailPattern.test(email)) {
-        showError(emailInput, "Enter a valid email address");
-    }
-    if (password === "") {
-        showError(passwordInput, "Enter your password");
-    }
-    if (date === "") {
-        showError(dateInput, "Select your date of birth");
-    }
-    if (gender === "") {
-        showError(genderInput, "Select your gender");
-    }
-
-    // Checking for any remaining errors before form submission
-    const errorInputs = document.querySelectorAll(".form-group .error");
-    if (errorInputs.length > 0) return;
-
-    // Submitting the form
-    form.submit();
+    return birthday === formattedBirthday && gender === nicGender;
 }
 
-// Toggling password visibility
-passToggleBtn.addEventListener('click', () => {
-    passToggleBtn.className = passwordInput.type === "password" ? "fa-solid fa-eye-slash" : "fa-solid fa-eye";
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+function findDayAndGender(days, d_array) {
+    var dayList = days;
+    var month = '';
+    var result = { day: '', month: '', gender: '' };
+
+    if (dayList < 500) {
+        result.gender = 'Male';
+    } else {
+        result.gender = 'Female';
+        dayList = dayList - 500;
+    }
+
+    for (var i = 0; i < d_array.length; i++) {
+        if (d_array[i]['days'] < dayList) {
+            dayList = dayList - d_array[i]['days'];
+        } else {
+            month = d_array[i]['month'];
+            break;
+        }
+    }
+    result.day = dayList;
+    result.month = month;
+    return result;
+}
+
+function extractData(nicNumber) {
+    var result = { year: '', dayList: '', character: '' };
+
+    if (nicNumber.length === 10) {
+        result.year = nicNumber.substr(0, 2);
+        result.dayList = nicNumber.substr(2, 3);
+        result.character = nicNumber.substr(9, 10);
+    } else if (nicNumber.length === 12) {
+        result.year = nicNumber.substr(0, 4);
+        result.dayList = nicNumber.substr(4, 3);
+        result.character = 'no';
+    }
+    return result;
+}
+
+function getFormattedDate(date) {
+    var year = date.getFullYear();
+
+    var month = (1 + date.getMonth()).toString();
+    month = month.length > 1 ? month : '0' + month;
+
+    var day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+
+    return month + '/' + day + '/' + year;
+}
+
+// Event listener for clearing the validation error message
+document.getElementById("nic").addEventListener("input", function() {
+    document.getElementById("validationError").innerHTML = "";
 });
-
-// Handling form submission event
-form.addEventListener("submit", handleFormData);
