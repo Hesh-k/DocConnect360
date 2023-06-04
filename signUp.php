@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="birthday">Birthday:</label>
-                <input type="date" placeholder="dd-mm-yyyy" id="birthday" name="birthday" required>
+                <input type="date" id="birthday" name="birthday" required>
             </div>
             <div class="form-group">
                 <label>Gender:</label>

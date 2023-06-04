@@ -15,27 +15,26 @@ var d_array = [
 ];
 
 function validateForm() {
+
+
+
     var nicNumber = document.getElementById("nic").value;
     var birthday = document.getElementById("birthday").value;
     var gender = document.querySelector('input[name="gender"]:checked').value;
 
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+
 
     if (!validateNIC(nicNumber, birthday, gender)) {
         document.getElementById("validationError").innerHTML = "NIC number does not match with the provided birthday and gender.";
         return false;
     }
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return false;
-    }
-
     return true;
 }
 
+
 function validateNIC(nicNumber, birthday, gender) {
+    
     var extractedData = extractData(nicNumber);
     var days = extractedData.dayList;
     var foundData = findDayAndGender(days, d_array);
