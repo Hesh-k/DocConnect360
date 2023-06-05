@@ -6,7 +6,7 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
@@ -22,12 +22,12 @@ if(isset($_POST['submit'])){
 
       if($row['user_type'] == 'admin'){
 
-         $_SESSION['admin_name'] = $row['name'];
+         $_SESSION['admin_name'] = $row['fname'];
          header('location:admin_page.php');
 
       }elseif($row['user_type'] == 'user'){
 
-         $_SESSION['user_name'] = $row['name'];
+         $_SESSION['user_name'] = $row['fname'];
          header('location:user_page.php');
 
       }

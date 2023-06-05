@@ -4,8 +4,13 @@
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+   $lname = mysqli_real_escape_string($conn, $_POST['lname']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pnumber = mysqli_real_escape_string($conn, $_POST['pnumber']);
+   $usernic = mysqli_real_escape_string($conn, $_POST['nic']);
+   $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+   $gender = $_POST['gender'];
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
@@ -23,7 +28,7 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
+         $insert = "INSERT INTO user_form(fname, lname, email, pnumber, nic, birthday, gender, password, user_type) VALUES('$fname','$lname','$email','$pnumber','$usernic','$birthday','$gender','$pass','$user_type')";
          mysqli_query($conn, $insert);
          header('location:login_form.php');
       }
@@ -51,7 +56,7 @@ if(isset($_POST['submit'])){
 <div class="form-container">
 
    <form action="" method="post">
-      <h3>register now</h3>
+      <h3>DocConnect360</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -62,11 +67,11 @@ if(isset($_POST['submit'])){
       <input type="text" name="fname" required placeholder="enter your first name">
       <input type="text" name="lname" required placeholder="enter your last name">
       <input type="email" name="email" required placeholder="enter your email">
-      <input type="tel" name="pnumber" pattern="[0-9]{3}-[0-9]{3} [0-9]{4}" required placeholder="enter your mobile number">
+      <input type="tel" name="pnumber" required placeholder="enter your mobile number">
       <input type="text" name="nic" required placeholder="enter your NIC">
       <input type="date" name="birthday" required placeholder="enter your birthday">
-      <input type="radio" name="gender" value="Male"><label>Male</label>
-      <input type="radio" name="gender" value="Female"><label>Female</label><br>
+      <input type="radio" name="gender" value="male"><label>Male</label>
+      <input type="radio" name="gender" value="female"><label>Female</label>
       <input type="password" name="password" required placeholder="enter your password">
       <input type="password" name="cpassword" required placeholder="confirm your password">
       <input type="checkbox" name="terms" value="true"><label>accept terms and conditions</label>
