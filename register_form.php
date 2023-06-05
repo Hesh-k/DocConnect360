@@ -69,7 +69,7 @@ if(isset($_POST['submit'])){
       <input type="email" name="email" required placeholder="enter your email">
       <input type="tel" name="pnumber" required placeholder="enter your mobile number">
       <input type="text" name="nic" required placeholder="enter your NIC">
-      <input type="date" name="birthday" required placeholder="enter your birthday">
+      <input type="text" name="birthday" required placeholder="enter your birthday" onfocus="(this.type='date')" onblur="(this.type='text')">
       <input type="radio" name="gender" value="male"><label>Male</label>
       <input type="radio" name="gender" value="female"><label>Female</label>
       <input type="password" name="password" required placeholder="enter your password">
