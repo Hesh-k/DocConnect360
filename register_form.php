@@ -81,6 +81,7 @@ if(isset($_POST['submit'])){
          <option value="user">user</option>
          <option value="admin">admin</option>
       </select>
+      <!-- <input type="hidden" name="userType" value="user"> -->
       <input type="submit" name="submit" value="register now" class="form-btn">
       <p>already have an account? <a href="login_form.php">login now</a></p>
    </form>

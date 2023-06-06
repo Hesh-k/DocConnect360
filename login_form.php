@@ -20,12 +20,7 @@ if(isset($_POST['submit'])){
 
       $row = mysqli_fetch_array($result);
 
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['fname'];
-         header('location:admin_page.php');
-
-      }elseif($row['user_type'] == 'user'){
+      if($row['user_type'] == 'user'){
 
          $_SESSION['user_name'] = $row['fname'];
          header('location:user_page.php');
@@ -56,7 +51,7 @@ if(isset($_POST['submit'])){
 <div class="form-container">
 
    <form action="" method="post">
-      <h3>login now</h3>
+      <h3>User login</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
