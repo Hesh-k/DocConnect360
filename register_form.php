@@ -67,11 +67,13 @@ if(isset($_POST['submit'])){
       <input type="text" name="fname" required placeholder="enter your first name">
       <input type="text" name="lname" required placeholder="enter your last name">
       <input type="email" name="email" required placeholder="enter your email">
-      <input type="tel" name="pnumber" required placeholder="enter your mobile number">
+      <input type="tel" name="pnumber"  required placeholder="enter your mobile number">
       <input type="text" name="nic" required placeholder="enter your NIC">
       <input type="text" name="birthday" required placeholder="enter your birthday" onfocus="(this.type='date')" onblur="(this.type='text')">
+      
       <input type="radio" name="gender" value="male"><label>Male</label>
       <input type="radio" name="gender" value="female"><label>Female</label>
+      
       <input type="password" name="password" required placeholder="enter your password">
       <input type="password" name="cpassword" required placeholder="confirm your password">
       <input type="checkbox" name="terms" value="true"><label>accept terms and conditions</label>
