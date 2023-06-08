@@ -117,8 +117,8 @@ if(isset($_POST['submit'])){
       <input type="password" name="password" required placeholder="enter your password">
       <input type="password" name="cpassword" required placeholder="confirm your password">
 
-      <div>
-       <input type="checkbox" name="terms" value="true"><label>Accept terms and conditions</label>
+      <div style="display:flex;">
+       <input style="width:fit-content;margin-right:10px;" type="checkbox" name="terms" value="true"><label style="margin-top:6px;">Accept terms and conditions</label>
       </div>
 
       <select name="user_type">
