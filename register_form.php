@@ -55,10 +55,41 @@ if(isset($_POST['submit'])){
    <title>register form</title>
 
    <!-- custom css file link  -->
+   <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+   <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
+<div class="header-container">
+        <div class="logo">
+            <img class="logo-image" src="assets/logo.png">
+        </div>
+        <div class="header-info">
+            <div class="email"><a href="mailto:hello@docconnect360.com">hello@docconnect360.com</a></div>
+            <div class="phone">+94 112 123 123</div>
+        </div>
+    </div>    
+   
+    <div class="navbar-container">
+            <div class="navlinks-container">
+                <a href="#">Home</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About</a>
+                <a href="#" id="myAppointments">My Appointments</a>
+                <a href="#" id="ambulance">Call an Ambulance</a>
+            </div>
+            <div class="login-container">
+                <a href="login_form.php" id="login">Login</a>
+                <a href="register_form.php" id="signup">Sign Up</a>
+            </div>
+        </div>
+
+
+
+
+
+
    
 <div class="form-container">
 
