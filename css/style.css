@@ -17,6 +17,7 @@
    padding-bottom: 60px;
 }
 
+
 .container .content{
    text-align: center;
 }
@@ -43,6 +44,8 @@
 }
 
 .container .content p{
+
+
    font-size: 25px;
    margin-bottom: 20px;
 }
@@ -76,11 +79,12 @@
    border-radius: 5px;
    box-shadow: 0 5px 10px rgba(0,0,0,.1);
    background: #fff;
-   text-align: center;
+   /* text-align: center; */
    width: 500px;
 }
 
 .form-container form h3{
+   text-align: center;
    font-size: 30px;
    text-transform: uppercase;
    margin-bottom: 10px;
@@ -116,13 +120,13 @@
 
 .form-container form p{
    margin-top: 10px;
-   font-size: 20px;
-   color:#333;
+   font-size: 15px;
+   color:#1d1d1d;
 }
 
 .form-container form p a{
-   color:crimson;
-}
+   color:rgb(220, 20, 60);
+} 
 
 .form-container form .error-msg{
    margin:10px 0;

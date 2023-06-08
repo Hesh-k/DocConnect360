@@ -47,7 +47,7 @@ if(isset($_POST['submit'])) {
 <div class="form-container">
 
    <form action="" method="post">
-      <h3>Forgot Password Reset</h3>
+      <h3>Password Reset</h3>
       <?php
       if(isset($error)){
          echo '<span class="error-msg">'.$error.'</span>';
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])) {
       ?>
       <?php
       if(isset($_SESSION['reset_success']) && $_SESSION['reset_success'] === true){
-         echo '<span class="success-msg">Password reset successfully! Please log in with your new password.</span>';
+        /* echo '<span class="success-msg">Password reset successfully! Please log in with your new password.</span>';*/
          unset($_SESSION['reset_success']);
       };
       ?>

@@ -13,11 +13,16 @@ if(isset($_POST['submit'])){
    $gender = $_POST['gender'];
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
+   $terms = $_POST['terms'];
    $user_type = $_POST['user_type'];
 
    $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
 
    $result = mysqli_query($conn, $select);
+
+
+   if($terms == 'true'){
+   
 
    if(mysqli_num_rows($result) > 0){
 
@@ -33,6 +38,8 @@ if(isset($_POST['submit'])){
          header('location:login_form.php');
       }
    }
+
+   }else{$error[] ='Please accept the terms and conditions !';}
 
 };
 
@@ -70,20 +77,28 @@ if(isset($_POST['submit'])){
       <input type="tel" name="pnumber"  required placeholder="enter your mobile number">
       <input type="text" name="nic" required placeholder="enter your NIC">
       <input type="text" name="birthday" required placeholder="enter your birthday" onfocus="(this.type='date')" onblur="(this.type='text')">
-      
-      <input type="radio" name="gender" value="male"><label>Male</label>
-      <input type="radio" name="gender" value="female"><label>Female</label>
-      
+
+      <div style=" display:flex;flex-direction:raw;">
+       <input style="width:fit-content;margin-left:20px;margin-right:20px;margin-top:10px;" type="radio" name="gender" value="male"><label style="margin-top:5px;">Male</label>
+       <input style="width:fit-content;margin-left:20px;margin-right:20px;margin-top:10px;" type="radio" name="gender" value="female"><label style="margin-top:5px;">Female</label>
+      </div>
+
       <input type="password" name="password" required placeholder="enter your password">
       <input type="password" name="cpassword" required placeholder="confirm your password">
-      <input type="checkbox" name="terms" value="true"><label>accept terms and conditions</label>
+
+      <div>
+       <input type="checkbox" name="terms" value="true"><label>Accept terms and conditions</label>
+      </div>
+
       <select name="user_type">
          <option value="user">user</option>
          <option value="admin">admin</option>
       </select>
       <!-- <input type="hidden" name="userType" value="user"> -->
+      
       <input type="submit" name="submit" value="register now" class="form-btn">
-      <p>already have an account? <a href="login_form.php">login now</a></p>
+      
+      <p>Already have an account ? <a style="" href="login_form.php">login now</a></p>
    </form>
 
 </div>
