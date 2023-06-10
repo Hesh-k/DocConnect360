@@ -122,7 +122,7 @@ if(isset($_POST['submit'])){
       </div>
 
 
-      <input type="hidden" name="userType" value="user">
+      <input type="hidden" name="user_type" value="user">
       
       <input type="submit" name="submit" value="register now" class="form-btn">
       
