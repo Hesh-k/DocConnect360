@@ -1,0 +1,138 @@
+body {
+    background: #00a99d;
+    margin: 0;
+    font-family: Calibri;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 0 40px -10px #000;
+    padding: 20px;
+    width: 700px;
+}
+
+h2 {
+    margin: 10px 0 20px;
+    padding-bottom: 10px;
+    width: 180px;
+    color: #78788c;
+    border-bottom: 3px solid #78788c;
+}
+
+#add-new {
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom:10px;
+    width: 100px;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #00a99d;
+    font-weight: bold;
+}
+
+#add-new:hover {
+    background-color:#018b82;
+    cursor: pointer;
+}
+
+#add-new a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+#add-new i {
+    margin-right: 5px;
+}
+
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #78788c;
+    color: white;
+}
+
+#customers td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#customers td a {
+    display: b;
+    justify-content: center;
+    text-decoration: none;
+    margin-right:10px;
+    width: 70px;
+    padding: 0.4rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn.btn-success {
+    background-color: #3333f1;
+}
+
+.btn.btn-success:hover {
+    background-color:#2e2ed5;
+    cursor: pointer;
+}
+
+.btn.btn-danger {
+    background-color: #f74444;
+}
+
+.btn.btn-danger:hover {
+    background-color:#cf3c3c;
+    cursor: pointer;
+}
+
+#customers tr {
+    background-color: #fff;
+}
+
+#customers tr:hover {
+    background-color: #d3d3d3;
+}
+
+table {
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: left;
+}
+
+table th:nth-child(3) {
+    width: 200px;
+}
+
+table td.message {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

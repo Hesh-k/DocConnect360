@@ -1,0 +1,296 @@
+* {
+    font-family: Calibri;
+    color: #fff;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    order: 1;
+}
+
+.logo-image {
+    width: 200px;
+    height: auto;
+}
+
+.header-info {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.email, .phone {
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.email a {
+    color: #00a99d;
+    text-decoration: none;
+}
+
+.phone {
+    color: #000000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#000000;
+    padding: 10px;
+}
+
+.navbar-container a {
+    border-radius: 50px;
+    margin-right: 10px;
+    font-family: 'Calibri';
+    font-weight: 1000;
+    color: #00a99d;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.navlinks-container {
+    display: flex;
+}
+
+.navlinks-container a:hover {
+    border-color: #00a99d;
+    border-radius: 50px;
+}
+
+#myAppointments {
+    background-color: #00a99d;
+    color: #ffffff;
+}
+
+#myAppointments:hover {
+    background-color:#069f95;
+    border-color:#069f95;
+}
+
+#ambulance {
+    background-color:crimson;
+    color: #ffffff;
+}
+
+#ambulance:hover {
+    background-color:rgb(195, 18, 53);
+    border-color:rgb(195, 18, 53);
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#login {
+    background-color:#079963;
+    color: #ffffff;
+}
+
+#login:hover {
+    background-color: #058456;
+}
+
+#signup {
+    background-color:#d9eee1;
+    color: #000000;
+}
+
+#signup:hover {
+    background-color: #059862;
+}
+
+/*footer*/
+.footer-container {
+    display: flex;
+    background-color:  #343434;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info {
+    display: block;
+    padding: 1%;
+    margin-left: 15px;
+    order: 1;
+    font-size: smaller;
+}
+
+.footer-navbar {
+    display: block;
+    margin-bottom: -170px;
+    order: 2;
+}
+
+.footer-navbar a {
+    border-radius: 50px;
+    margin-right: 10px;
+    font-weight: 100;
+    color: #00a99d;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.social-buttons {
+    display: block;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    order: 3;
+}
+
+.social {
+    width: 100px;
+}
+
+.apps {
+    width: 120px;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    order: 1;
+}
+
+.logo-image {
+    width: 200px;
+    height: auto;
+}
+
+.header-info {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.email, .phone {
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.email a {
+    color: #00a99d;
+    font-family: Calibri;
+    text-decoration: none;
+}
+
+.phone {
+    color: #000000;
+    font-family: Calibri;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#000000;
+    padding: 10px;
+}
+
+.navbar-container a {
+    border-radius: 50px;
+    margin-right: 10px;
+    font-family: 'Calibri';
+    font-weight: 1000;
+    color: #00a99d;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.navlinks-container {
+    display: flex;
+}
+
+.navlinks-container a:hover {
+    border-color: #00a99d;
+    border-radius: 50px;
+}
+
+#myAppointments {
+    background-color: #00a99d;
+    color: #ffffff;
+}
+
+#myAppointments:hover {
+    background-color:#069f95;
+    border-color:#069f95;
+}
+
+#ambulance {
+    background-color:crimson;
+    color: #ffffff;
+}
+
+#ambulance:hover {
+    background-color:rgb(195, 18, 53);
+    border-color:rgb(195, 18, 53);
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#login {
+    background-color:#079963;
+    color: #ffffff;
+}
+
+#login:hover {
+    background-color: #058456;
+}
+
+#signup {
+    background-color:#d9eee1;
+    color: #000000;
+}
+
+#signup:hover {
+    background-color: #059862;
+}
+
+/*main body*/
+.main-container {
+    display: block;
+    text-align: justify;
+    padding: 1rem;
+    margin: auto;
+    background-color:#005c55;
+    max-width: 1000px;
+}
+
+.main-container figure {
+    font-size: 0.7rem;
+}
+
+.main-container img {
+    width: 50%;
+}

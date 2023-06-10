@@ -9,13 +9,13 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-   $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+   $fname = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass'";
+   $select = " SELECT * FROM admin_reg WHERE email = '$email' && password = '$pass' ";
 
    $result = mysqli_query($conn, $select);
 
@@ -23,11 +23,10 @@ if(isset($_POST['submit'])){
 
       $row = mysqli_fetch_array($result);
 
-      if($row['user_type'] == 'user'){
+      if($row['user_type'] == 'admin'){
 
-         $_SESSION['user_name'] = $row['fname'];
-         $_SESSION['user_email'] = $row['email'];
-         header('location:profile.php');
+         $_SESSION['admin_name'] = $row['name'];
+         header('location:admin_page.php');
 
       }
      
@@ -44,36 +43,32 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Login to DocConnect360</title>
+   <title>Admin login form</title>
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="styles/styles.css">
 
 </head>
 <body>
-
-<?php
-    include_once "header.php"
-?>
+   
 <div class="form-container">
 
    <form action="" method="post">
-      <h3>User Login</h3>
-      <?php
-      if(isset($error)){
+      <h3>Admin login</h3>
+     <?php
+     if(isset($error)){
          foreach($error as $error){
             echo '<span class="error-msg">'.$error.'</span>';
          };
-      };
-      ?>
-      <input type="email" name="email" required placeholder="Email">
-      <input type="password" name="password" required placeholder="Password">
-      <div>
-      <p>Forgot password? <a href="forgetpass.php">Reset</a></p>
-      </div>
+      }; 
+      ?> 
+      <input type="email" name="email" required placeholder="enter your email">
+      <input type="password" name="password" required placeholder="enter your password">
       <input type="submit" name="submit" value="login now" class="form-btn">
-      <p>Don't have an account? <a href="register_form.php">Sign Up</a></p>
+      <p>don't have an account? <a href="admin_register_form.php">register now</a></p>
    </form>
 
 </div>
+
+</body>
+</html>

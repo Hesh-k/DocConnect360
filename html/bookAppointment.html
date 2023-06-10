@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Book Appoinment</title>
+    <link rel='stylesheet' href="styles/bookAppointment.css">
+   
+    
+    
+</head>
+<body>
+    
+
+    <div class="form">
+        <form  method ="POST" action="appointmentdata.php">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Let's Channel Your Doctor</div>
+
+            <div class="input-container ic2">
+            <input type="text" class="input" name = "DoctorName" placeholder="Doctor's Name" required>
+            <div class="cut"></div>
+            </div>
+            <div class="input-container ic2">
+            <input type="date" class="input" name="date" id="date" required>
+            <div class="cut"></div>
+            </div>
+            <div class="input-container ic2">
+            <input type="text" class="input" name = "Number" placeholder="Phone Number" required>
+            <div class="cut cut-short"></div>    
+            </div >
+            <div>
+            <input type="submit" class="submit" value="Confirm Appoinment" onclick="showAlert()">
+            </div>    
+           
+
+
+        </form>
+    </div>
+    <script type="text/javascript">
+        function showAlert() {
+            alert("You have Sucssessfuly Book An Appointment!");
+        }
+    </script>
+</body>
+</html>
