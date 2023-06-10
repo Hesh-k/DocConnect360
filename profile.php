@@ -1,7 +1,21 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+
+if(!isset($_SESSION['user_name'])){
+   header('location:login_form.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DocConnect360 by VirtualVitals | Find a Doctor, Order Medicine</title>
     
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
@@ -28,24 +42,20 @@
                 <a href="#" id="ambulance">Call an Ambulance</a>
             </div>
             <div class="login-container">
-                <a href="login_form.php" id="login">Login</a>
-                <a href="register_form.php" id="signup">Sign Up</a>
+                <a href="logout.php" id="login">Logout</a>
             </div>
         </div>
-    <div class="main-container">
-        <div class="banner">
-            <img src="assets/banner.jpg" class="banner">
-            <div class="banner-txt">DocConnect360 is Sri Lanka's Largest eChannelling Platform</div>
-            <div class="booking">
-                <a href="login_form.php">
-                    <button>BOOK AN APPOINTMENT</button>
-                </a>
-            </div>
-        </div>
-        <div class="mainbg">
-            <img src="assets/main-background.jpg" class="mainbg">
-        </div>
-    </div>
+
+        <div class="container">
+            <div class="content">
+            <h3>hi, <span>user</span></h3>
+            <h1>welcome <span><?php echo $_SESSION['user_name'] ?></span></h1>
+            <a href="editprofile.php" class="btn">Edit Profile</a>
+            <a href="deleteprofile.php" class="btn">Delete Profile</a>
+            
+         </div>
+
+</div>
     <div class="footer-container">
         <div class="footer-info">
             <p>A VirtualVitals Company<br>Copyright (C) 2023 by VirtualVitals</p>

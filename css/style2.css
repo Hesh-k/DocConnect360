@@ -1,0 +1,74 @@
+
+    .Userinfo {
+      text-align: center;
+      width: 40%;
+      margin: 0 auto;
+      padding: 40px;
+      border: 50px solid #ccc;
+      border-radius: 5px;
+      background-color: #FEF3AD;
+   }
+   
+   .Userinfo table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+   }
+   
+   .Userinfo table th {
+      font-weight: bold;
+      text-align: left;
+   }
+   
+   .Userinfo table td {
+      padding: 8px;
+      text-align: left;
+   }
+
+   /* Form styling */
+   .Userinfo form {
+      margin-top: 20px;
+   }
+
+   .Userinfo form input[type="text"],
+   .Userinfo form input[type="date"],
+   .Userinfo form input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+   }
+
+   .Userinfo form input[type="radio"] {
+      margin-right: 10px;
+   }
+
+   /* Submit button styling */
+   .Userinfo form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+   }
+
+   .Userinfo form input[type="submit"]:hover {
+      background-color: #45a049;
+   }
+
+   /* Success and error message styling */
+   .success-msg {
+      color: #FE1919;
+      margin-top: 10px;
+   }
+
+   .error-msg {
+      color: #FE1919;
+      margin-top: 10px;
+   }
+   
+

@@ -21,9 +21,10 @@ if(isset($_POST['submit'])){
       $row = mysqli_fetch_array($result);
 
       if($row['user_type'] == 'user'){
-
          $_SESSION['user_name'] = $row['fname'];
-         header('location:user_page.php');
+         $_SESSION['user_email'] = $row['email'];
+         header('location: after_login.html');
+     }
 
       }
      
