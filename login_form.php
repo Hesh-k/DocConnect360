@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass'";
 
    $result = mysqli_query($conn, $select);
 
@@ -21,10 +21,10 @@ if(isset($_POST['submit'])){
       $row = mysqli_fetch_array($result);
 
       if($row['user_type'] == 'user'){
+
          $_SESSION['user_name'] = $row['fname'];
          $_SESSION['user_email'] = $row['email'];
-         header('location: after_login.html');
-     }
+         header('location:profile.php');
 
       }
      

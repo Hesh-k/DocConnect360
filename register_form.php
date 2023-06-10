@@ -121,11 +121,8 @@ if(isset($_POST['submit'])){
        <input style="width:fit-content;margin-right:10px;" type="checkbox" name="terms" value="true"><label style="margin-top:6px;">Accept terms and conditions</label>
       </div>
 
-      <select name="user_type">
-         <option value="user">user</option>
-         <option value="admin">admin</option>
-      </select>
-      <!-- <input type="hidden" name="userType" value="user"> -->
+
+      <input type="hidden" name="userType" value="user">
       
       <input type="submit" name="submit" value="register now" class="form-btn">
       

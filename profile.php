@@ -19,7 +19,7 @@ if(!isset($_SESSION['user_name'])){
     <title>DocConnect360 by VirtualVitals | Find a Doctor, Order Medicine</title>
     
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
