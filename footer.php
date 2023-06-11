@@ -1,4 +1,9 @@
-<div class="footer-container">
+<html>
+<head>
+</head>
+<body>
+
+    <div class="footer-container">
         <div class="footer-info">
             <p>A VirtualVitals Company<br>Copyright (C) 2023 by VirtualVitals</p>
             <p>DocConnect360,<br>VirtualVitals Terrace,<br>Malabe,<br>Sri Lanka 10115</p>
@@ -14,6 +19,10 @@
             <p>Download our free app</p>
             <img src="assets/apps.png" class="apps">
         </div>
-    </div>       
+    </div>
+
+    
 </body>
 </html>
+
+

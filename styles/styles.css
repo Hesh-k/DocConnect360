@@ -109,11 +109,10 @@
     background-color: #059862;
 }
 
-/*footer*/
+/* footer*/
+
 .footer-container {
-    /* display: flex;
-    position: fixed;
-    width: 100%; */
+    font-family: sans-serif;
     display:flex ;
     left: 0;
     bottom: 0;
