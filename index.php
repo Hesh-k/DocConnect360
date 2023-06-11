@@ -16,7 +16,15 @@
         <div class="banner">
             <img src="assets/banner.jpg" class="banner">
             <div class="banner-txt">DocConnect360 is Sri Lanka's Largest eChannelling Platform</div>
-            <div class="booking"><a href="login_form.php"><button>BOOK AN APPOINTMENT</button></a></div>
+            <div class="booking">
+                <a href="login_form.php">
+                    <button>BOOK AN APPOINTMENT</button>
+                </a>
+                <a href="searchdoctor.php">
+                    <button>SEARCH A DOCTOR</button>
+                </a>
+            </div>
+            
         </div>
         <div class="mainbg">
             <img src="assets/main-background.jpg" class="mainbg">
