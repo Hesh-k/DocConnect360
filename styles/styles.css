@@ -118,6 +118,19 @@
     align-items: center;
 }
 
+.footer-container-search{
+    display: flex; 
+    position: fixed; 
+    width: 100%;
+    left:0;
+    bottom:0;
+    background-color:  #343434;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 .footer-info {
     display: block;
     padding: 1%;

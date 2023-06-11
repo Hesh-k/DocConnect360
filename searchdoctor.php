@@ -33,7 +33,18 @@
                 <a href="#" id="ambulance">Call an Ambulance</a>
             </div>
             <div class="login-container">
-                <a href="profile.php" id="login">View Profile</a>
+                <?php
+                session_start();
+                include_once 'config.php';
+
+                if (isset($_SESSION['user_email'])) {
+                    echo '<a href="profile.php" id="login">View Profile</a>';
+                }
+                else{
+                    echo '<a href="login_form.php" id="login">Login</a>';
+                }
+                ?>
+                
             </div>
         </div>
     
@@ -70,7 +81,7 @@
   ?>
 </div>
 
-    <div class="footer-container">
+    <div class="footer-container-search">
         <div class="footer-info">
             <p>A VirtualVitals Company<br>Copyright (C) 2023 by VirtualVitals</p>
             <p>DocConnect360,<br>VirtualVitals Terrace,<br>Malabe,<br>Sri Lanka 10115</p>
@@ -87,7 +98,7 @@
             <img src="assets/apps.png" class="apps">
         </div>
     </div>   
-
+    
 </body>
 
 </html>
