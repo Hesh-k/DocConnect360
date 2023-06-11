@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 09:56 AM
+-- Generation Time: Jun 11, 2023 at 10:42 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -87,6 +87,7 @@ INSERT INTO `doctor` (`doctor_id`, `fname`, `lname`, `specializations`) VALUES
 
 CREATE TABLE `tickets` (
   `ticket_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -98,8 +99,8 @@ CREATE TABLE `tickets` (
 -- Dumping data for table `tickets`
 --
 
-INSERT INTO `tickets` (`ticket_id`, `fname`, `lname`, `email`, `message`, `timestamp`) VALUES
-(29, 'hesh', 'kodi', 'hesh@gmail.com', 'ahhhh', '2023-06-10 19:23:07');
+INSERT INTO `tickets` (`ticket_id`, `id`, `fname`, `lname`, `email`, `message`, `timestamp`) VALUES
+(29, 1, 'hesh', 'kodi', 'hesh@gmail.com', 'ahhhh', '2023-06-10 19:23:07');
 
 -- --------------------------------------------------------
 
@@ -126,13 +127,7 @@ CREATE TABLE `user_form` (
 --
 
 INSERT INTO `user_form` (`id`, `fname`, `lname`, `email`, `pnumber`, `nic`, `birthday`, `gender`, `password`, `cpassword`, `user_type`) VALUES
-(5, 'hesh', 'kodi', 'hesh@gmail.com', 714259878, '200034904611v', '2023-06-13', 'male', 'fcea920f7412b5da7be0cf42b8c93759', '', 'user'),
-(6, 'kasun', 'kodi', 'kasun@gmailcom', 714259878, '200034904611v', '2023-06-27', 'female', '81dc9bdb52d04dc20036dbd8313ed055', '', 'admin'),
-(7, 'hesh', 'kodi', 'gg@gmail.com', 71, '200034904611v', '2023-06-15', 'male', '289dff07669d7a23de0ef88d2f7129e7', '', 'user'),
-(8, 'lana', 'jaya', 'lana@gmail.com', 714259878, '200034904611v', '2023-06-28', 'male', '81dc9bdb52d04dc20036dbd8313ed055', '', 'user'),
-(9, 'lak', 'shan', 'lakshan@gmail.com', 714259878, '200034904611v', '2023-06-21', 'female', '202cb962ac59075b964b07152d234b70', '', 'user'),
-(10, 'hesh', 'kodi', 'rathu@gmail.com', 714259878, '200034904611', '2023-06-13', 'male', '202cb962ac59075b964b07152d234b70', '', 'user'),
-(15, 'aka', 'naka', 'aka@gmail.com', 714259878, '200034904611v', '2023-06-28', 'male', '202cb962ac59075b964b07152d234b70', '', 'user');
+(1, 'aka', 'naka', 'aka@gmail.com', 714259878, '200034904611v', '2023-06-28', 'male', '202cb962ac59075b964b07152d234b70', '', 'user');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +155,8 @@ ALTER TABLE `doctor`
 -- Indexes for table `tickets`
 --
 ALTER TABLE `tickets`
-  ADD PRIMARY KEY (`ticket_id`);
+  ADD PRIMARY KEY (`ticket_id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `user_form`
@@ -201,6 +197,16 @@ ALTER TABLE `tickets`
 --
 ALTER TABLE `user_form`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tickets`
+--
+ALTER TABLE `tickets`
+  ADD CONSTRAINT `tickets_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user_form` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
