@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +21,16 @@
                 <th>Actions</th>
             </tr>
             <?php
+                ini_set('display_errors', 0);
+                error_reporting(E_ERROR | E_WARNING | E_PARSE);
+                session_start();
                 include_once "config.php";
-                $sql = "SELECT * FROM tickets";
+
+                // Get the user's email from the session
+                $useremail = $_SESSION['user_email'];
+
+                // Fetch the tickets submitted by the corresponding user
+                $sql = "SELECT * FROM tickets WHERE email = '$useremail'";
                 $result = $conn->query($sql);
 
                 if (!$result) {

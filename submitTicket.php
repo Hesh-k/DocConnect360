@@ -22,7 +22,7 @@ if ($result && $result->num_rows > 0) {
 
     // Performing insert query execution
     $sql = "INSERT INTO tickets (user_id, fname, lname, email, message)
-            VALUES ('$user_id', '$fname', '$lname', '$email', '$message')";
+            VALUES ('$user_id', '$fname', '$lname', '$useremail', '$message')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Ticket submitted successfully!')</script>";

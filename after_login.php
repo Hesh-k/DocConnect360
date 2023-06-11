@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 @include 'config.php';
 
@@ -39,7 +41,7 @@ session_start();
             
 
             <div>
-            <p style="color: #ffffff;">User : <span><?php echo $_SESSION['user_name'] ?></span></p>
+            <p style="color: #ffffff;"><span><?php echo 'User :'. $_SESSION['user_name'] ?></span></p>
             <p style="color: #ffffff;"><span><?php echo $_SESSION['user_email'] ?></span></p>
             </div>    
 
