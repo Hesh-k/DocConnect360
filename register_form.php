@@ -82,8 +82,8 @@ if(isset($_POST['submit'])){
       ?>
       <input type="text" name="fname" required placeholder="First name">
       <input type="text" name="lname" required placeholder="Last name">
-      <input type="email" name="email" required placeholder="Email">
-      <input type="tel" name="pnumber"  required placeholder="Mobile number">
+      <input type="email" name="email" required placeholder="Email" pattern="[a-z0-9._]+@[a-z0-9.-_]+.[a-z0-9]{2,3}">
+      <input type="tel" name="pnumber"  required placeholder="Mobile number" pattern="[0-9]{10}">
       <input type="text" name="nic" required placeholder="NIC (123456789V)">
       <input type="text" name="birthday" required placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
 
