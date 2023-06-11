@@ -299,6 +299,7 @@
 }
 
 .booking {
+    display: flex;
     position: absolute;
     left: 50%;
     bottom: 0;

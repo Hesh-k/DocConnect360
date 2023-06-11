@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="email" name="email" required placeholder="Email" pattern="[a-z0-9._]+@[a-z0-9.-_]+.[a-z0-9]{2,3}">
+      <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
       <input type="password" name="password" required placeholder="Password">
       <div>
       <p>Forgot password? <a href="forgetpass.php">Reset</a></p>

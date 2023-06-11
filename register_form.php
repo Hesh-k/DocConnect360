@@ -80,12 +80,12 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="text" name="fname" required placeholder="First name">
-      <input type="text" name="lname" required placeholder="Last name">
-      <input type="email" name="email" required placeholder="Email" pattern="[a-z0-9._]+@[a-z0-9.-_]+.[a-z0-9]{2,3}">
-      <input type="tel" name="pnumber"  required placeholder="Mobile number" pattern="[0-9]{10}">
-      <input type="text" name="nic" required placeholder="NIC (123456789V)">
-      <input type="text" name="birthday" required placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
+      <input type="text" name="fname" placeholder="First name" required>
+      <input type="text" name="lname" placeholder="Last name" required>
+      <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+      <input type="tel" name="pnumber" placeholder="Mobile number" pattern="[0-9]{10}" required>
+      <input type="text" name="nic" placeholder="NIC (123456789V)" required>
+      <input type="text" name="birthday" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required>
 
       <div style=" display:flex;flex-direction:raw;">
        <input style="width:fit-content;margin-left:20px;margin-right:20px;margin-top:10px;" type="radio" name="gender" value="male"><label style="margin-top:5px;">Male</label>
