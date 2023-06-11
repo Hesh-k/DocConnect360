@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 10:42 AM
+-- Generation Time: Jun 11, 2023 at 03:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,10 +51,21 @@ INSERT INTO `admin_reg` (`admin_ID`, `name`, `email`, `password`, `cpassword`, `
 
 CREATE TABLE `appointments` (
   `appointment_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `doctorName` varchar(40) NOT NULL,
   `day` date NOT NULL,
   `number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`appointment_id`, `user_id`, `doctorName`, `day`, `number`) VALUES
+(12, 17, 'heshsn', '2023-06-06', 714259878),
+(13, 17, 'kasupo', '2023-06-29', 125645),
+(14, 18, 'newdota', '2023-06-14', 714259878),
+(15, 18, 'aneee', '2023-06-30', 714259878);
 
 -- --------------------------------------------------------
 
@@ -87,7 +98,7 @@ INSERT INTO `doctor` (`doctor_id`, `fname`, `lname`, `specializations`) VALUES
 
 CREATE TABLE `tickets` (
   `ticket_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
+  `user_id` int(50) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -99,8 +110,11 @@ CREATE TABLE `tickets` (
 -- Dumping data for table `tickets`
 --
 
-INSERT INTO `tickets` (`ticket_id`, `id`, `fname`, `lname`, `email`, `message`, `timestamp`) VALUES
-(29, 1, 'hesh', 'kodi', 'hesh@gmail.com', 'ahhhh', '2023-06-10 19:23:07');
+INSERT INTO `tickets` (`ticket_id`, `user_id`, `fname`, `lname`, `email`, `message`, `timestamp`) VALUES
+(41, 17, 'kasun', 'jaya', 'kasun@gmailcom', 'hello world', '2023-06-11 13:17:50'),
+(42, 17, 'kasun', 'jaya', 'kasun@gmailcom', 'another msg', '2023-06-11 13:18:04'),
+(43, 18, 'lana', 'naka', 'lana@gmail.com', 'hiii', '2023-06-11 13:23:14'),
+(44, 18, 'lak', 'shan', 'lana@gmail.com', 'byeeee', '2023-06-11 13:23:28');
 
 -- --------------------------------------------------------
 
@@ -127,7 +141,8 @@ CREATE TABLE `user_form` (
 --
 
 INSERT INTO `user_form` (`id`, `fname`, `lname`, `email`, `pnumber`, `nic`, `birthday`, `gender`, `password`, `cpassword`, `user_type`) VALUES
-(1, 'aka', 'naka', 'aka@gmail.com', 714259878, '200034904611v', '2023-06-28', 'male', '202cb962ac59075b964b07152d234b70', '', 'user');
+(17, 'kasun', 'kodi', 'kasun@gmailcom', 714259878, '200034904611v', '2023-06-15', 'male', '202cb962ac59075b964b07152d234b70', '', 'user'),
+(18, 'lana', 'kodi', 'lana@gmail.com', 714259878, '200034904611v', '2023-06-27', 'male', '202cb962ac59075b964b07152d234b70', '', 'user');
 
 --
 -- Indexes for dumped tables
@@ -156,7 +171,7 @@ ALTER TABLE `doctor`
 --
 ALTER TABLE `tickets`
   ADD PRIMARY KEY (`ticket_id`),
-  ADD KEY `id` (`id`);
+  ADD KEY `id` (`user_id`);
 
 --
 -- Indexes for table `user_form`
@@ -178,7 +193,7 @@ ALTER TABLE `admin_reg`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `doctor`
@@ -190,23 +205,13 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `tickets`
---
-ALTER TABLE `tickets`
-  ADD CONSTRAINT `tickets_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user_form` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
