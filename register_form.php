@@ -61,6 +61,7 @@ if(isset($_POST['submit'])){
    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/style.css">
+   <script src="js/script.js"></script>
 
 </head>
 
@@ -91,8 +92,9 @@ if(isset($_POST['submit'])){
        <input style="width:fit-content;margin-left:20px;margin-right:20px;margin-top:10px;" type="radio" name="gender" value="female"><label style="margin-top:5px;">Female</label>
       </div>
 
-      <input type="password" name="password" required placeholder="Password">
-      <input type="password" name="cpassword" required placeholder="Retype password">
+      <input type="password" id="pwd1" name="password" onkeyup='check();' required placeholder="Password">
+      <input type="password" id="pwd2" name="cpassword" onkeyup='check();' required placeholder="Retype password">
+      <span id='msg'></span>
 
       <div style="display:flex;">
        <input style="width:fit-content;margin-right:10px;" type="checkbox" name="terms" value="true"><label style="margin-top:6px;">Accept terms and conditions</label>
