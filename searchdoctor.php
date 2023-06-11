@@ -47,12 +47,13 @@
                 
             </div>
         </div>
-    
-        <form class="searchbox" action="" method="post">
+  <div>  
+  <div >       
+    <form class="searchbox" action="" method="post">
     <input type="text" placeholder="Search.." name="search">
     <button type="submit" value="Search"><i class="fa fa-search"></i></button>
-</form>
-
+    </form>
+ </div>
 <div class="search_result">
 
   <?php
@@ -79,6 +80,7 @@
     }
   }
   ?>
+</div>
 </div>
 
     <div class="footer-container-search">

@@ -8,9 +8,16 @@
 
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/> -->
+
+    <div>
+
+
 </head>
 <body>
+
     <div class="form">
         <h2>CONTACT US</h2>
         <button id="back-btn"><i class="fa-sharp fa-solid fa-arrow-left"></i><a href="tickets.php">&nbsp;View Tickets</a></button>
@@ -23,6 +30,7 @@
             <input type="email" id="email" name="email" required><br><br>
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" required></textarea><br><br>
+            <input type="hidden"  name="email" required><br><br>
             <input type="submit" id="submitBtn" value="Submit">
         </form>
     </div>

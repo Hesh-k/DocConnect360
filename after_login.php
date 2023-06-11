@@ -30,11 +30,20 @@ session_start();
     <div class="navbar-container">
             <div class="navlinks-container">
                 <a href="#">Home</a>
-                <a href="#">Contact Us</a>
+                <a href="contact.php">Contact Us</a>
                 <a href="#">About</a>
                 <a href="#" id="myAppointments">My Appointments</a>
                 <a href="#" id="ambulance">Call an Ambulance</a>
             </div>
+
+            
+
+            <div>
+            <p style="color: #ffffff;">User : <span><?php echo $_SESSION['user_name'] ?></span></p>
+            <p style="color: #ffffff;"><span><?php echo $_SESSION['user_email'] ?></span></p>
+            </div>    
+
+
             <div class="login-container">
                 <a href="profile.php" id="login">View Profile</a>
                 <a href="logout.php" id="signup">Logout</a>

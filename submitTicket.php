@@ -1,25 +1,40 @@
 <?php
-	//including config.php file required to establish the database connection
-	include_once "config.php";
+@include 'config.php';
 
-	//taking values from form data
-	$fname = $_REQUEST['fname'];
-	$lname = $_REQUEST['lname'];
-	$email = $_REQUEST['email'];
-	$message = $_REQUEST['message'];
+session_start();
 
-	//performing insert query execution
-	$sql = "INSERT INTO tickets (fname, lname, email, message)
-	VALUES ('$fname', '$lname', '$email', '$message')";
+$useremail = $_SESSION['user_email'];
 
-	if(mysqli_query($conn, $sql)){
-		echo "<script>alert('Ticket submitted successfully!')</script>";
-		echo "<script>window.location.href = 'tickets.php';</script>";
-		exit(); 
-	} else{
-		echo "ERROR! $sql. " . mysqli_error($conn);
-	}
+// Retrieve the user ID from the user_form table
+$sql = "SELECT id FROM user_form WHERE email = '$useremail'";
+$result = $conn->query($sql);
 
-	//closing connection
-	mysqli_close($conn);
+// Check if the query was successful and fetch the user ID
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $user_id = $row['id'];
+
+    // Taking values from form data
+    $fname = $_REQUEST['fname'];
+    $lname = $_REQUEST['lname'];
+    $email = $_REQUEST['email'];
+    $message = $_REQUEST['message'];
+
+    // Performing insert query execution
+    $sql = "INSERT INTO tickets (user_id, fname, lname, email, message)
+            VALUES ('$user_id', '$fname', '$lname', '$email', '$message')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Ticket submitted successfully!')</script>";
+        echo "<script>window.location.href = 'tickets.php';</script>";
+        exit();
+    } else {
+        echo "ERROR! $sql. " . mysqli_error($conn);
+    }
+} else {
+    echo "Failed to fetch user ID.";
+}
+
+// Closing the connection
+mysqli_close($conn);
 ?>
