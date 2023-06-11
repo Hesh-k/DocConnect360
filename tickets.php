@@ -27,10 +27,10 @@
                 include_once "config.php";
 
                 // Get the user's email from the session
-                $useremail = $_SESSION['user_email'];
+                $userid = $_SESSION['user_id'];
 
                 // Fetch the tickets submitted by the corresponding user
-                $sql = "SELECT * FROM tickets WHERE email = '$useremail'";
+                $sql = "SELECT * FROM tickets WHERE user_id = '$userid'";
                 $result = $conn->query($sql);
 
                 if (!$result) {

@@ -25,8 +25,13 @@ if(isset($_POST['submit'])){
 
       if($row['user_type'] == 'user'){
 
+         $idselect = " SELECT id FROM user_form WHERE email = '$email'";
+         $idresult = mysqli_query($conn, $idselect);
+
+
          $_SESSION['user_name'] = $row['fname'];
          $_SESSION['user_email'] = $row['email'];
+         $_SESSION['user_id'] = $row['id'];
          header('location:after_login.php');
 
       }
