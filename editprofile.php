@@ -59,12 +59,13 @@
                     // Get the updated values from the form
                     $fname = $_POST['fname'];
                     $lname = $_POST['lname'];
+                    $nic = $_POST['nic'];
                     $birthday = $_POST['birthday'];
                     $gender = $_POST['gender'];
                     $pnumber = $_POST['pnumber'];
                     
                     // Update the user's information in the database
-                    $updateSql = "UPDATE user_form SET fname='$fname', lname='$lname', birthday='$birthday', gender='$gender', pnumber='$pnumber' WHERE email='$email'";
+                    $updateSql = "UPDATE user_form SET fname='$fname', lname='$lname',nic='$nic', birthday='$birthday', gender='$gender', pnumber='$pnumber' WHERE email='$email'";
                     $updateResult = $conn->query($updateSql);
                     
                     if($updateResult) {
@@ -74,6 +75,7 @@
                         // Update the displayed values
                         $row['fname'] = $fname;
                         $row['lname'] = $lname;
+                        $row['nic'] = $nic;
                         $row['birthday'] = $birthday;
                         $row['gender'] = $gender;
                         $row['pnumber'] = $pnumber;
@@ -84,9 +86,10 @@
                 }
                 
                 // Display the user information and form
-                echo '<h1>User Information</h1>';
+                echo '<h1>USER INFORMATION</h1>';
                 echo '<table>';
                 echo '<tr><td>Full Name :</td><td>'.$row['fname'].' '.$row['lname'].'</td></tr>';
+                echo '<tr><td>NIC :</td><td>'.$row['nic'].'</td></tr>';
                 echo '<tr><td>Date of Birth :</td><td>'.$row['birthday'].'</td></tr>';
                 echo '<tr><td>Gender :</td><td>'.$row['gender'].'</td></tr>';
                 echo '<tr><td>E-mail :</td><td>'.$row['email'].'</td></tr>';
@@ -98,6 +101,7 @@
                 echo '<form method="post" action="">';
                 echo '<input type="text" name="fname" value="'.$row['fname'].'" placeholder="First Name" required>'.'</br>';
                 echo '<input type="text" name="lname" value="'.$row['lname'].'" placeholder="Last Name" required>'.'</br>';
+                echo '<input type="text" name="nic" value="'.$row['nic'].'" placeholder="NIC" required>'.'</br>';
                 echo '<input type="date" name="birthday" value="'.$row['birthday'].'" placeholder="Date of Birth" required>'.'</br>';
                 echo '<input type="radio" name="gender" value="male" '.($row['gender'] === 'male' ? 'checked' : '').'> Male'.'</br>';
                 echo '<input type="radio" name="gender" value="female" '.($row['gender'] === 'female' ? 'checked' : '').'> Female'.'</br>';

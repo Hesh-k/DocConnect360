@@ -100,9 +100,9 @@ if ($result->num_rows > 0) {
                         <td><?php echo $pnumber; ?></td>
                     </tr>
                 </table>
-            </div>
-            <a href="editprofile.php" class="btn">Edit Profile</a>
-            <a href="deleteprofile.php" class="btn">Delete Profile</a>
+            </div >
+            <a style="margin-top: 20px;" href="editprofile.php" class="btn">Edit Profile</a>
+            <a style="margin-top: 20px;" href="deleteprofile.php" class="btn">Delete Profile</a>
         </div>
     </div>
 </body>
