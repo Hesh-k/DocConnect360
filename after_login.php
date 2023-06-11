@@ -37,6 +37,7 @@ session_start();
             </div>
             <div class="login-container">
                 <a href="profile.php" id="login">View Profile</a>
+                <a href="logout.php" id="signup">Logout</a>
             </div>
         </div>
     <div class="main-container">
@@ -53,7 +54,7 @@ session_start();
                 </a>
             </div>
 
-            
+
         </div>
         <div class="mainbg">
             <img src="assets/main-background.jpg" class="mainbg">

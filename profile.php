@@ -102,7 +102,8 @@ if ($result->num_rows > 0) {
                 </table>
             </div >
             <a style="margin-top: 20px;" href="editprofile.php" class="btn">Edit Profile</a>
-            <a style="margin-top: 20px;" href="deleteprofile.php" class="btn">Delete Profile</a>
+
+            <a style="margin-top: 20px;" href="deleteprofile.php" onclick="return confirm('Are your sure you want to delet your account ?');" class="btn">Delete Profile</a>
         </div>
     </div>
 </body>
