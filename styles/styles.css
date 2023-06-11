@@ -111,7 +111,12 @@
 
 /*footer*/
 .footer-container {
-    display: flex;
+    /* display: flex;
+    position: fixed;
+    width: 100%; */
+    display:flex ;
+    left: 0;
+    bottom: 0;
     background-color:  #343434;
     color: white;
     justify-content: space-between;
