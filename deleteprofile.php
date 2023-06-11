@@ -11,7 +11,7 @@ if (isset($_SESSION['user_email'])) {
 
     if ($result) {
 
-        header('location: index.html');
+        header('location: index.php');
     } else {
         // Failed to delete the record
         echo "Error deleting record: " . mysqli_error($conn);
