@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
 
          $_SESSION['user_name'] = $row['fname'];
          $_SESSION['user_email'] = $row['email'];
-         header('location:profile.php');
+         header('location:after_login.php');
 
       }
      

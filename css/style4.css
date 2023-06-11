@@ -1,0 +1,65 @@
+/* Search box */
+.searchbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.searchbox input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.searchbox button[type="submit"] {
+  background-color: #555;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Search results */
+.search_result {
+  margin-top: 20px;
+}
+
+.search_result table {
+  width: 60%;
+  border-collapse: collapse;
+  margin-left: 250px;
+  margin-bottom: 200px;
+  margin-top: 50px;
+}
+
+.search_result th,
+.search_result td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.search_result th {
+  background-color: #73fd6e;
+}
+
+.search_result td.name {
+  font-weight: bold;
+}
+
+.search_result td.specializations {
+  color: #000000;
+}
+
+.search_result p.no_results {
+    text-align: center;
+    font-size: 24px;
+    color: #8d0000;
+    margin-bottom: 100px;
+    font-weight: bold;
+}

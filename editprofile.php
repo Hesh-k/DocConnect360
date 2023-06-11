@@ -38,6 +38,7 @@
             </div>
             <div class="login-container">
                 <a href="logout.php" id="login">Logout</a>
+                <a href="profile.php" id="signup">View Profile</a>
             </div>
         </div>
     </div>
@@ -132,6 +133,3 @@
     </div>       
 </body>
 </html>
-
-
-<!-- jhgehghhvwhv -->
