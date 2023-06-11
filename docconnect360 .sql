@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 03:37 PM
+-- Generation Time: Jun 11, 2023 at 05:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -36,13 +36,6 @@ CREATE TABLE `admin_reg` (
   `user_type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `admin_reg`
---
-
-INSERT INTO `admin_reg` (`admin_ID`, `name`, `email`, `password`, `cpassword`, `user_type`) VALUES
-(1, 'hesh', 'hesh@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '', 'admin');
-
 -- --------------------------------------------------------
 
 --
@@ -56,16 +49,6 @@ CREATE TABLE `appointments` (
   `day` date NOT NULL,
   `number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `appointments`
---
-
-INSERT INTO `appointments` (`appointment_id`, `user_id`, `doctorName`, `day`, `number`) VALUES
-(12, 17, 'heshsn', '2023-06-06', 714259878),
-(13, 17, 'kasupo', '2023-06-29', 125645),
-(14, 18, 'newdota', '2023-06-14', 714259878),
-(15, 18, 'aneee', '2023-06-30', 714259878);
 
 -- --------------------------------------------------------
 
@@ -93,6 +76,28 @@ INSERT INTO `doctor` (`doctor_id`, `fname`, `lname`, `specializations`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `medicine` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `timestamp`, `fname`, `lname`, `medicine`) VALUES
+(2, 0, '0000-00-00 00:00:00', 'Savindu', 'Sihilel', 'paracetamol');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tickets`
 --
 
@@ -105,16 +110,6 @@ CREATE TABLE `tickets` (
   `message` varchar(300) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tickets`
---
-
-INSERT INTO `tickets` (`ticket_id`, `user_id`, `fname`, `lname`, `email`, `message`, `timestamp`) VALUES
-(41, 17, 'kasun', 'jaya', 'kasun@gmailcom', 'hello world', '2023-06-11 13:17:50'),
-(42, 17, 'kasun', 'jaya', 'kasun@gmailcom', 'another msg', '2023-06-11 13:18:04'),
-(43, 18, 'lana', 'naka', 'lana@gmail.com', 'hiii', '2023-06-11 13:23:14'),
-(44, 18, 'lak', 'shan', 'lana@gmail.com', 'byeeee', '2023-06-11 13:23:28');
 
 -- --------------------------------------------------------
 
@@ -135,14 +130,6 @@ CREATE TABLE `user_form` (
   `cpassword` varchar(50) NOT NULL,
   `user_type` enum('user','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user_form`
---
-
-INSERT INTO `user_form` (`id`, `fname`, `lname`, `email`, `pnumber`, `nic`, `birthday`, `gender`, `password`, `cpassword`, `user_type`) VALUES
-(17, 'kasun', 'kodi', 'kasun@gmailcom', 714259878, '200034904611v', '2023-06-15', 'male', '202cb962ac59075b964b07152d234b70', '', 'user'),
-(18, 'lana', 'kodi', 'lana@gmail.com', 714259878, '200034904611v', '2023-06-27', 'male', '202cb962ac59075b964b07152d234b70', '', 'user');
 
 --
 -- Indexes for dumped tables
@@ -167,6 +154,12 @@ ALTER TABLE `doctor`
   ADD PRIMARY KEY (`doctor_id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `tickets`
 --
 ALTER TABLE `tickets`
@@ -187,19 +180,25 @@ ALTER TABLE `user_form`
 -- AUTO_INCREMENT for table `admin_reg`
 --
 ALTER TABLE `admin_reg`
-  MODIFY `admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
   MODIFY `doctor_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tickets`
