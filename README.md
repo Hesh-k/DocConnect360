@@ -8,7 +8,7 @@ To get started with this project, you need to clone this repository to your loca
 
 
 ```sh
-git clone https://github.com/IT22589804/DocConnect360.git
+git clone https://github.com/Hesh-k/DocConnect360.git
 
 ```
 
