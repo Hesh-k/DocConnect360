@@ -36,7 +36,7 @@
                 <?php
                 session_start();
                 include_once 'config.php';
-
+            //checking user logged or not and return different buttons on nav bar
                 if (isset($_SESSION['user_email'])) {
                     echo '<a href="profile.php" id="login">View Profile</a>';
                 }
