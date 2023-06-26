@@ -28,10 +28,9 @@
                 session_start();
                 include_once "config.php";
 
-                $adminid = $_SESSION['admin_ID'];
-                $adminName = $_SESSION['name'];
+                $userid = $_SESSION['user_id'];
 
-                $sql = "SELECT * FROM admin_reg WHERE admin_ID = '$adminid'";
+                $sql = "SELECT * FROM appointments WHERE user_id = '$userid'";
                 $result = $conn->query($sql);
 
 
@@ -48,11 +47,8 @@
                     <td>$row[day]</td>
                     <td>$row[number]</td>
                     <td>
-                  
                         <a class='btn btn-success' href='editAppointment.php?appointment_id=$row[appointment_id]'>Reschedule</a>
-                    
                         <a class='btn btn-danger' href='deleteAppointment.php?appointment_id=$row[appointment_id]'>Cancel</a>
-                  
                     </td>
                 </tr>
                 ";}
@@ -62,4 +58,3 @@
     </div>
 </body>
 </html>
-
