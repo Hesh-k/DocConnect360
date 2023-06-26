@@ -18,7 +18,7 @@
                 <a href="about.php">About</a>
                 <a href="admin_register_form.php">Admin Portal</a>
                 <a href="login_form.php" id="myAppointments">My Appointments</a>
-                <a href="login_form.php" id="ambulance">Call an Ambulance</a>
+                <a href="ambulance.html" id="ambulance">Call an Ambulance</a>
             </div>
             <div class="login-container">
                 <a href="login_form.php" id="login">Login</a>

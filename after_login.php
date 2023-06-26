@@ -36,7 +36,7 @@ session_start();
                 <a href="contact.php">Contact Us</a>
                 <a href="about.php">About</a>
                 <a href="bookAppointment.php" id="myAppointments">My Appointments</a>
-                <a href="#" id="ambulance">Call an Ambulance</a>
+                <a href="ambulance.html" id="ambulance">Call an Ambulance</a>
             </div>
 
             
