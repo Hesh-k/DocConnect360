@@ -3,10 +3,11 @@
 <head>
     <title>Delete Form</title>
     <link rel='stylesheet' href="admin.css">
+
 </head>
 <body>
     <div class="form">
-    <form id="deleteForm" method="post" action="">
+    <form id="deleteForm" method="post" action="delete.php">
         <label for="id">ID:</label>
         <input type="text" name="id" class="input" required placeholder="Enter User ID"><br><br>
         
@@ -14,17 +15,5 @@
         
     </form>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          document.getElementById("deleteForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-        
-            if (confirm("Are you sure you want to delete your account?")) {
-              this.submit(); // Proceed with form submission if confirmed
-            }
-          });
-        });
-    </script>
 </body>
 </html>
