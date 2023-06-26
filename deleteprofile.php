@@ -17,7 +17,7 @@ if (isset($_SESSION['user_email'])) {
         echo "Error deleting record: " . mysqli_error($conn);
     }
 } else {
-    // User not logged in
+    
     echo "User not logged in.";
 }
 
