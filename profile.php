@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_name'])) {
     header('location:login_form.php');
 }
 
-// Fetch user details from the database
+//Fetch user details from the database
 $email = $_SESSION['user_email'];
 $sql = "SELECT * FROM user_form WHERE email = '$email'";
 $result = $conn->query($sql);

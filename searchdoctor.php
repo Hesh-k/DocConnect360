@@ -26,10 +26,10 @@
    
     <div class="navbar-container">
             <div class="navlinks-container">
-                <a href="#">Home</a>
-                <a href="#">Contact Us</a>
-                <a href="#">About</a>
-                <a href="#" id="myAppointments">My Appointments</a>
+                <a href="index.php">Home</a>
+                <a href="contact.php">Contact Us</a>
+                <a href="about.php">About</a>
+                <a href="bookAppointment.php" id="myAppointments">My Appointments</a>
                 <a href="#" id="ambulance">Call an Ambulance</a>
             </div>
             <div class="login-container">
