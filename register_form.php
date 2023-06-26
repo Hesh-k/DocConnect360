@@ -83,8 +83,8 @@ if(isset($_POST['submit'])){
       <input type="text" name="fname" placeholder="First name" required>
       <input type="text" name="lname" placeholder="Last name" required>
       <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-      <input type="tel" name="pnumber" placeholder="Mobile number" pattern="[0-9]{10}" required>
-      <input type="text" name="nic" placeholder="NIC (123456789V)" required>
+      <input type="tel" name="pnumber" placeholder="Mobile number" pattern="^(?:\+94|0)[0-9]{9}$" required>
+      <input type="text" name="nic" pattern="^\d{9}[vV]$|^\d{12}$" placeholder="NIC (123456789V)" required>
       <input type="text" name="birthday" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required>
 
       <div style=" display:flex;flex-direction:raw;">
@@ -92,8 +92,8 @@ if(isset($_POST['submit'])){
        <input style="width:fit-content;margin-left:20px;margin-right:20px;margin-top:10px;" type="radio" name="gender" value="female"><label style="margin-top:5px;">Female</label>
       </div>
 
-      <input type="password" id="pwd1" name="password" onkeyup='check();' required placeholder="Password">
-      <input type="password" id="pwd2" name="cpassword" onkeyup='check();' required placeholder="Retype password">
+      <input type="password" id="pwd1" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onkeyup='check();' required placeholder="Password">
+      <input type="password" id="pwd2" name="cpassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onkeyup='check();' required placeholder="Retype password">
       <span id='msg'></span>
 
       <div style="display:flex;">
