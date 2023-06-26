@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Sign Up</title>
 
-   <!-- custom css file link  -->
+   
    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/style.css">
@@ -103,5 +103,11 @@ if(isset($_POST['submit'])){
       <input type="submit" name="submit" value="register now" class="form-btn">
       
       <p>Already have a user? <a style="" href="login_form.php">Login</a></p>
+      
    </form>
 </div>
+
+
+
+
+
