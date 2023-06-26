@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM admin_reg WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM admin_reg WHERE email = '$email' && password = '$pass'";
 
    $result = mysqli_query($conn, $select);
 
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
       if($row['user_type'] == 'admin'){
 
          $_SESSION['admin_name'] = $row['name'];
-         header('location:admin.html');
+         header('location:admin.php');
 
       }
      

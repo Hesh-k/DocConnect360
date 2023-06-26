@@ -30,6 +30,7 @@
    
     <div class="navbar-container">
             <div class="navlinks-container">
+                
                 <a href="after_login.php">Home</a>
                 <a href="contact.php">Contact Us</a>
                 <a href="about.php">About</a>
