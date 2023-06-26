@@ -73,13 +73,7 @@ if(isset($_POST['submit'])){
 
    <form action="" method="post">
       <h3>CREATE AN ACCOUNT</h3>
-      <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
-      ?>
+  
       <input type="text" name="fname" placeholder="First name" required>
       <input type="text" name="lname" placeholder="Last name" required>
       <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
@@ -93,6 +87,9 @@ if(isset($_POST['submit'])){
       </div>
 
       <input type="password" id="pwd1" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onkeyup='check();' required placeholder="Password">
+      <div style="display:flex;">
+         <lable for="pwd1" style="font-size:12px;"> Should contain A-Z a-z 0-9 !@#... (min 8 char) </label>
+      </div>
       <input type="password" id="pwd2" name="cpassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onkeyup='check();' required placeholder="Retype password">
       <span id='msg'></span>
 
