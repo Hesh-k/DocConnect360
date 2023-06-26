@@ -26,7 +26,7 @@
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="assets/sld3.jpg" style="width:100%">
+  <img src="assets/sld3.jpeg" style="width:100%">
 </div>
 
 </div>

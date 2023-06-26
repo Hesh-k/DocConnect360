@@ -86,7 +86,7 @@ session_start();
 
         <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="assets/sld3.jpg" style="width:100%">
+        <img src="assets/sld3.jpeg" style="width:100%">
         </div>
 
         </div><br>
@@ -134,7 +134,7 @@ session_start();
         }
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
         }
      </script>
     
