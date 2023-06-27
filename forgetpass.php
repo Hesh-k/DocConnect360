@@ -41,8 +41,9 @@ if(isset($_POST['submit'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Forgot Password Reset Form</title>
 
-   <!-- custom css file link  -->
+  
    <link rel="stylesheet" href="css/style.css">
+   <script src="js/script.js"></script>
 
 </head>
 <body>
@@ -58,13 +59,13 @@ if(isset($_POST['submit'])) {
       ?>
       <?php
       if(isset($_SESSION['reset_success']) && $_SESSION['reset_success'] === true){
-        /* echo '<span class="success-msg">Password reset successfully! Please log in with your new password.</span>';*/
+         echo '<span class="success-msg">Password reset successfully! Please log in with your new password.</span>';
          unset($_SESSION['reset_success']);
       };
       ?>
       <input type="email" name="email" required placeholder="Enter your email">
       <input type="text" name="nic" required placeholder="Enter your NIC">
-      <input type="password" name="new_password" required placeholder="Enter your new password">
+      <input type="password" name="new_password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter your new password">
       <input type="password" name="confirm_new_password" required placeholder="Confirm your new password">
       <input type="submit" name="submit" value="Reset Password" class="form-btn">
    </form>
